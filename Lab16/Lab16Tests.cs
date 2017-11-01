@@ -30,31 +30,31 @@ namespace Lab16
         }
     
         [Test]
-        public void case4()
+        public void case5()
         {
             Assert.AreEqual(541, Hiker.GetPrime(100));
         }
     
         [Test]
-        public void case5()
+        public void case6()
         {
             Assert.AreEqual("st", Hiker.GetSuffix(1));
         }
     
         [Test]
-        public void case6()
+        public void case7()
         {
             Assert.AreEqual("nd", Hiker.GetSuffix(2));
         }
     
         [Test]
-        public void case7()
+        public void case8()
         {
             Assert.AreEqual("th", Hiker.GetSuffix(11));
         }
     
         [Test]
-        public void case8()
+        public void case9()
         {
             Assert.AreEqual("th", Hiker.GetSuffix(12));
         }
