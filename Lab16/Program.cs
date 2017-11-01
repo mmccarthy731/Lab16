@@ -17,6 +17,7 @@ namespace Lab16
             }
         }
 
+        //Method for getting and validating user input for index
         public static int GetIndex(string prompt)
         {
             int number = 0;
@@ -35,16 +36,17 @@ namespace Lab16
             return number;
         }
 
+        //assuredly over-complex method to obtain 'n'th prime number
         public static int GetPrime(int index)
         {
-            int j = 1;
-            for (int i = 1; i <= index; i++)
+            int j = 1; //declare variable that will be used to test for prime numbers
+            for (int i = 1; i <= index; i++) //'i' will be the indexer, for loop will stop when 'i' reaches the user-specified index
             {
-                j++;
+                j++; //every time while loop is escaped, 'j' will increment
                 bool isPrime = false;
                 while (!isPrime)
                 {
-                    if (j > 1 && j < 4)
+                    if (j > 1 && j < 4) //test for prime number
                     {
                         isPrime = true;
                     }
@@ -64,7 +66,7 @@ namespace Lab16
                     {
                         isPrime = true;
                     }
-                    else if (j < 169 && j >= 121 && j % 11 != 0 && j % 7 != 0 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0)
+                    else if (j < 169 && j >= 121 && j % 11 != 0 && j % 7 != 0 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0) //getting ridiculously complex, I know...
                     {
                         isPrime = true;
                     }
@@ -76,15 +78,15 @@ namespace Lab16
                     {
                         isPrime = true;
                     }
-                    else if (j < 529 && j >= 361 && j % 19 != 0 && j % 17 != 0 && j % 13 != 0 && j % 11 != 0 && j % 7 != 0 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0)
+                    else if (j < 529 && j >= 361 && j % 19 != 0 && j % 17 != 0 && j % 13 != 0 && j % 11 != 0 && j % 7 != 0 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0) 
                     {
                         isPrime = true;
                     }
-                    else if (j <= 541 && j >= 529 && j % 23 != 0 && j % 19 != 0 && j % 17 != 0 && j % 13 != 0 && j % 11 != 0 && j % 7 != 0 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0)
+                    else if (j <= 541 && j >= 529 && j % 23 != 0 && j % 19 != 0 && j % 17 != 0 && j % 13 != 0 && j % 11 != 0 && j % 7 != 0 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0) //absurdly complex test for prime number
                     {
                         isPrime = true;
                     }
-                    else
+                    else //catch-all, if 'j' is not a prime number, increment and start the while loop over
                     {
                         j++;
                         isPrime = false;
@@ -94,6 +96,7 @@ namespace Lab16
             return j;
         }
 
+        //Method for getting the proper suffix to add to the index number on the console window
         public static string GetSuffix(int number)
         {
             string numberString = number.ToString();
@@ -101,7 +104,7 @@ namespace Lab16
             int secondToLast = numberString.Length - 2;
             if(numberString[lastDigit] == '1')
             {
-                if(number > 10 && numberString[secondToLast] == '1')
+                if(number > 10 && numberString[secondToLast] == '1') //in case of 11, "th"
                 {
                     return "th";
                 }
@@ -109,7 +112,7 @@ namespace Lab16
             }
             else if(numberString[lastDigit] == '2')
             {
-                if (number > 10 && numberString[secondToLast] == '1')
+                if (number > 10 && numberString[secondToLast] == '1') //in case of 12, "th"
                 {
                     return "th";
                 }
@@ -117,7 +120,7 @@ namespace Lab16
             }
             else if(numberString[lastDigit] == '3')
             {
-                if (number > 10 && numberString[secondToLast] == '1')
+                if (number > 10 && numberString[secondToLast] == '1') //in case of 13, "th"
                 {
                     return "th";
                 }
@@ -129,6 +132,7 @@ namespace Lab16
             }
         }
 
+        //Method to control the repeat loop in main method
         public static bool DoAgain(string prompt)
         {
             Console.Write(prompt);
