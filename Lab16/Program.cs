@@ -37,72 +37,51 @@ namespace Lab16
 
         public static int GetPrime(int index)
         {
-            int[] primes = new int[index];
-            int primeValue = index - 1;
-            int j = 2;
-            for (int i = 0; i < index; i++)
+            int j = 1;
+            for (int i = 1; i <= index; i++)
             {
+                j++;
                 bool isPrime = false;
                 while (!isPrime)
                 {
-                    if (j < 4)
+                    if (j > 1 && j < 4)
                     {
-                        primes[i] = j;
-                        j++;
                         isPrime = true;
                     }
                     else if (j < 9 && j >= 4 && j % 2 != 0)
                     {
-                        primes[i] = j;
-                        j++;
                         isPrime = true;
                     }
                     else if (j < 25 && j >= 9 && j % 3 != 0 && j % 2 != 0)
                     {
-                        primes[i] = j;
-                        j++;
                         isPrime = true;
                     }
                     else if (j < 49 && j >= 25 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0)
                     {
-                        primes[i] = j;
-                        j++;
                         isPrime = true;
                     }
                     else if (j < 121 && j >= 49 && j % 7 != 0 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0)
                     {
-                        primes[i] = j;
-                        j++;
                         isPrime = true;
                     }
                     else if (j < 169 && j >= 121 && j % 11 != 0 && j % 7 != 0 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0)
                     {
-                        primes[i] = j;
-                        j++;
                         isPrime = true;
                     }
                     else if (j < 289 && j >= 169 && j % 13 != 0 && j % 11 != 0 && j % 7 != 0 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0)
                     {
-                        primes[i] = j;
-                        j++;
                         isPrime = true;
                     }
                     else if (j < 361 && j >= 289 && j % 17 != 0 && j % 13 != 0 && j % 11 != 0 && j % 7 != 0 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0)
                     {
-                        primes[i] = j;
-                        j++;
                         isPrime = true;
                     }
                     else if (j < 529 && j >= 361 && j % 19 != 0 && j % 17 != 0 && j % 13 != 0 && j % 11 != 0 && j % 7 != 0 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0)
                     {
-                        primes[i] = j;
-                        j++;
                         isPrime = true;
                     }
                     else if (j <= 541 && j >= 529 && j % 23 != 0 && j % 19 != 0 && j % 17 != 0 && j % 13 != 0 && j % 11 != 0 && j % 7 != 0 && j % 5 != 0 && j % 3 != 0 && j % 2 != 0)
                     {
-                        primes[i] = j;
-                        j++;
                         isPrime = true;
                     }
                     else
@@ -112,7 +91,7 @@ namespace Lab16
                     }
                 }
             }
-            return primes[primeValue];
+            return j;
         }
 
         public static string GetSuffix(int number)
